@@ -28,7 +28,6 @@ const ArtistDetails = () => {
   };
 
   const handlePlayClick = (song, i) => {
-    console.log(activeSong);
     dispatch(setActiveSong({ song, data: data.data, i }));
     dispatch(playPause(true));
   };

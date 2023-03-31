@@ -9,8 +9,6 @@ const PlayPause = ({ isPlaying, activeSong, song, handlePause, handlePlay }) => 
     activeSongName = activeSong?.attributes?.name;
   }
 
-  console.log(activeSongName, song);
-
   return (
     <>
     {
