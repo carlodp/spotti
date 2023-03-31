@@ -30,7 +30,7 @@ const TopArtistCard = ({
 
   return (
     <>
-      <div className="flex flex-col w-[calc(25%-25px)] p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+      <div className="flex flex-col lg:w-[calc(25%-25px)] md:w-[calc(33.33333%-25px)] sm:w-[calc(50%-25px)] w-fit p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
         <div className="relative w-full group">
           <Link to={`/artists/${song?.artists[0].adamid}`}>
         <img
