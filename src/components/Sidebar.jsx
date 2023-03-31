@@ -27,13 +27,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="md:flex hidden flex-col justify-between w-[240px] py-10 px-4 bg-[#191f24]">
+      <div className="md:flex hidden flex-col justify-between w-[240px] py-10 pb-3 px-4 bg-[#191f24]">
         <div>
           <img src={logo} alt="logo" className="w-full h-14 object-contain" />
           <NavLinks />
         </div>
         <div className="text-white">
-          <a href="https://carlosantos.dev" className="text-white text-lg ">© 2023 Carlo Santos</a>
+          <a href="https://carlosantos.dev" className="text-white text-lg font-semibold tracking-tight font-mono hover:text-[#22D37B]" target="_blank">© 2023 Carlo Santos</a>
         </div>
       </div>
 
