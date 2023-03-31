@@ -25,7 +25,7 @@ const SongBar = ({
           className="w-20 h-20 rounded-lg"
           src={song?.images?.coverArt
             .replace("{w}", "125")
-            .replace("{h}", "125") || "https://placehold.co/150x150" }
+            .replace("{h}", "125") || "https://placehold.co/250x250?text=No+Cover+Image" }
           alt={song?.title}
         />
         <div className="flex-1 flex flex-col justify-center mx-3">

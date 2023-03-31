@@ -26,7 +26,7 @@ const ArtistTopSongBar = ({
           className="w-20 h-20 rounded-lg"
           src={
             topSong?.artwork?.url.replace("{w}", "125").replace("{h}", "125") ||
-            "https://placehold.co/150x150"
+            "https://placehold.co/250x250?text=No+Cover+Image"
           }
           alt={topSong?.name}
         />

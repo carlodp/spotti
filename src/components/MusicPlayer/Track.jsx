@@ -8,7 +8,7 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
       } hidden sm:block h-16 w-16 mr-4`}
     >
       <img
-        src={activeSong?.images?.coverart || activeSong?.images?.coverArt || activeSong?.attributes?.artwork?.url.replace("{w}", "125").replace("{h}", "125") || "https://placehold.co/150x150" }
+        src={activeSong?.images?.coverart || activeSong?.images?.coverArt || activeSong?.attributes?.artwork?.url.replace("{w}", "125").replace("{h}", "125") || "https://placehold.co/250x250?text=No+Cover+Image" }
         alt="cover art"
         className="rounded-full"
       />

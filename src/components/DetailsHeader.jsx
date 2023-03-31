@@ -12,7 +12,10 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
           alt="art"
           src={
             artistId
-              ? artist.artwork?.url.replace("{w}", "500").replace("{h}", "500")
+              ? artist.artwork?.url
+                  .replace("{w}", "500")
+                  .replace("{h}", "500") ||
+                "https://placehold.co/250x250?text=No+Artist+Image"
               : songData?.images?.coverart
           }
         />
@@ -33,7 +36,7 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
           </p>
         </div>
       </div>
-      <div className="w-full sm:h-44 h-24"/>
+      <div className="w-full sm:h-44 h-24" />
     </div>
   );
 };
