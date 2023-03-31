@@ -17,7 +17,7 @@ const ArtistTopSongBar = ({
   return (
     <div
       className={`w-full flex flex-row items-center hover:bg-[#191f24] ${
-        activeSong?.name === topSong?.name ? "bg-[#191f247c]" : "bg-transparent"
+        activeSong?.name === topSong?.name ? "bg-[#c73353d2]" : "bg-transparent"
       } py-2 p-4 rounded-lg cursor-pointer mb-2`}
     >
       <h3 className="font-bold text-base text-white mr-3">{i + 1}.</h3>
