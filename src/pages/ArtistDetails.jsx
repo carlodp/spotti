@@ -1,7 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { DetailsHeader, Error, Loader, ArtistTopSongs } from "../components";
-import { useGetArtistDetailsQuery, useGetArtistTopSongsQuery } from "../redux/services/shazamCore";
+import {
+  useGetArtistDetailsQuery,
+  useGetArtistTopSongsQuery,
+} from "../redux/services/shazamCore";
 import { setActiveSong, playPause } from "../redux/features/playerSlice";
 
 const ArtistDetails = () => {
@@ -20,6 +23,9 @@ const ArtistDetails = () => {
 
   if (isFetchingArtistDetails)
     return <Loader title="Loading artist details..." />;
+
+  if (isFetchingTopSongs)
+    return <Loader title="Loading top songs..." />;
 
   if (error) return <Error />;
 
