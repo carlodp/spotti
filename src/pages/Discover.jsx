@@ -24,6 +24,7 @@ const Discover = () => {
 
   return (
     <div className="flex flex-col">
+      {/* <Loader title="Loading songs..." />; */}
       <GenreDropdown genreName={genreName} genreListId={genreListId} genreHandler={genreHandler} />
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data.tracks?.map((song, i) => (

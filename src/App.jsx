@@ -19,9 +19,8 @@ const App = () => {
       <Sidebar />
       <div className="flex-1 flex flex-col bg-gradient-to-br from-[#191f24] to-[#22D37B]">
         <Searchbar />
-
-        <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
-          <div className="flex-1 h-fit pb-40">
+        <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse gap-3">
+          <div className="flex-1 h-fit pb-24">
             <Routes>
               <Route path="/" element={<Discover />} />
               <Route path="/top-artists" element={<TopArtists />} />

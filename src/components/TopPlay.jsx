@@ -50,7 +50,7 @@ const TopChartCard = ({
 const TopPlay = () => {
   const dispatch = useDispatch();
   const { activeSong, isPlaying, genreListId } = useSelector((state) => state.player);
-  const { data } = useGetChartsQuery(genreListId);
+  const { data, isFetching } = useGetChartsQuery(genreListId);
   const divRef = useRef(null);
 
   useEffect(() => {
