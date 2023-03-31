@@ -8,20 +8,22 @@ const Track = ({ isPlaying, isActive, activeSong }) => (
       } hidden sm:block h-16 w-16 mr-4`}
     >
       <img
-        src={activeSong?.images?.coverart || activeSong?.images?.coverArt || "https://placehold.co/150x150" }
+        src={activeSong?.images?.coverart || activeSong?.images?.coverArt || activeSong?.attributes?.artwork?.url.replace("{w}", "125").replace("{h}", "125") || "https://placehold.co/150x150" }
         alt="cover art"
         className="rounded-full"
       />
     </div>
     <div className="w-[50%]">
       <p className="truncate text-white font-bold text-lg">
-        {activeSong?.title ? activeSong?.title : "No active Song"}
+        {activeSong?.title || activeSong?.attributes?.name || "No active Song"}
       </p>
       <p className="truncate text-gray-300">
         {activeSong?.subtitle
           ? activeSong?.subtitle
           : activeSong?.primaryArtist
           ? activeSong?.primaryArtist
+          : activeSong?.attributes.artistName
+          ? activeSong?.attributes.artistName
           : "No active Song"}
       </p>
     </div>

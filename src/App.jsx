@@ -7,6 +7,13 @@ import { ArtistDetails, TopArtists, AroundYou, Discover, Search, SongDetails, To
 const App = () => {
   const { activeSong } = useSelector((state) => state.player);
 
+  let activeSongName;
+  if(activeSong?.title) {
+    activeSongName = activeSong?.title;
+  } else {
+    activeSongName = activeSong?.attributes?.name;
+  }
+
   return (
     <div className="relative flex h-screen">
       <Sidebar />
@@ -30,9 +37,8 @@ const App = () => {
           </div>
         </div>
       </div>
-
-      {activeSong?.title && (
-        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#191f24] backdrop-blur-lg rounded-t-lg z-10">
+      {activeSongName && (
+        <div className="fixed h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#191f24] backdrop-blur-lg rounded-t-lg z-10">
           <MusicPlayer />
         </div>
       )}
