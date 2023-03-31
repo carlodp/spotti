@@ -22,10 +22,10 @@ const ArtistDetails = () => {
     useGetArtistTopSongsQuery(artistId);
 
   if (isFetchingArtistDetails)
-    return <Loader title="Loading artist details..." />;
+    return <Loader title="Loading Artist Details" />;
 
   if (isFetchingTopSongs)
-    return <Loader title="Loading top songs..." />;
+    return <Loader title="Loading Top Songs" />;
 
   if (error) return <Error />;
 

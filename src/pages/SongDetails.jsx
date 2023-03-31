@@ -22,7 +22,7 @@ const SongDetails = () => {
   } = useGetSongRelatedQuery(songid);
 
   if (isFetchingSongDetails || isFetchingRelatedSongs)
-    return <Loader title="Searching song details..." />;
+    return <Loader title="Searching Song Details" />;
 
   if (error) return <Error />;
 
@@ -43,7 +43,7 @@ const SongDetails = () => {
         <div className="mt-5">
           {songData?.sections[1]?.type === "LYRICS" ? (
             songData?.sections[1]?.text.map((line, i) => (
-              <p key={i} className="text-gray-400 text-base my-1">
+              <p key={i} className="text-white text-lg my-1">
                 {line}
               </p>
             ))

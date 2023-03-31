@@ -13,7 +13,7 @@ const Discover = () => {
   const { activeSong, isPlaying, genreListId } = useSelector((state) => state.player);
   const { data, isFetching, error } = useGetChartsQuery(genreListId);
 
-  if (isFetching) return <Loader title="Loading songs..." />;
+  if (isFetching) return <Loader title="Loading Songs" />;
   if (error) return <Error />;
 
   const genreHandler = (event) => {
@@ -24,7 +24,6 @@ const Discover = () => {
 
   return (
     <div className="flex flex-col">
-      {/* <Loader title="Loading songs..." />; */}
       <GenreDropdown genreName={genreName} genreListId={genreListId} genreHandler={genreHandler} />
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
         {data.tracks?.map((song, i) => (
