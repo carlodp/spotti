@@ -48,7 +48,7 @@ const TopChartCard = ({
           <img
             src={
               song?.images?.coverart ||
-              "https://placehold.co/250x250?text=No+Art"
+              "https://placehold.co/500x500?text=No+Art"
             }
             alt={song?.title}
           />
