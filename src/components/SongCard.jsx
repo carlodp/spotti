@@ -39,7 +39,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i, type }) => {
             type={type}
           />
         </div>
-        <img alt="song_img" src={song.images?.coverart} />
+        <img alt="song_img" src={song.images?.coverart || "https://placehold.co/250x250?text=No+Art"} />
       </div>
       <div className="mt-4 flex flex-col">
         <p className="font-semibold text-lg text-white truncate">
@@ -50,7 +50,7 @@ const SongCard = ({ song, isPlaying, activeSong, data, i, type }) => {
             to={
               song.artists
                 ? `/artists/${song?.artists[0]?.adamid}`
-                : "/top-arists"
+                : "/top-artists"
             }
           >
             {song.subtitle}

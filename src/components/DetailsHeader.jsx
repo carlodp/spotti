@@ -12,11 +12,9 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
           alt="art"
           src={
             artistId
-              ? artist.artwork?.url
-                  .replace("{w}", "500")
-                  .replace("{h}", "500") ||
-                "https://placehold.co/250x250?text=No+Artist+Image"
-              : songData?.images?.coverart
+              ? artist.artwork?.url.replace("{w}", "500").replace("{h}", "500")
+              : songData?.images?.coverart ||
+                "https://placehold.co/250x250?text=No+Song+Image"
           }
         />
 
@@ -25,14 +23,18 @@ const DetailsHeader = ({ artistId, artistData, songData }) => {
             {artistId ? artist?.name : songData?.title}
           </p>
           {!artistId && (
-            <Link to={`/artists/${songData?.artists[0]?.adamid}`}>
-              <p className="text-xl text-white mt-2">
-                {songData?.subtitle}
-              </p>
+            <Link
+              to={
+                songData.artists
+                  ? `/artists/${songData?.artists[0]?.adamid}`
+                  : "/top-artists"
+              }
+            >
+              <p className="text-xl text-white mt-2">{songData?.subtitle}</p>
             </Link>
           )}
           <p className="text-base text-gray-300 mt-2">
-            {artistId ? artist?.genreNames[0] : songData?.genres.primary}
+            {artistId ? artist?.genreNames[0] : songData?.genres?.primary}
           </p>
         </div>
       </div>

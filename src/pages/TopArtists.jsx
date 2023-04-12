@@ -32,17 +32,31 @@ const TopArtistCard = ({
     <>
       <div className="flex flex-col lg:w-[calc(25%-25px)] md:w-[calc(33.33333%-25px)] sm:w-[calc(50%-25px)] w-fit p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
         <div className="relative w-full group">
-          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
-        <img
-          src={song?.images.background}
-          alt="name"
-          className="rounded-lg w-full object-cover"
-        />
-      </Link>
+          <Link
+            to={
+              song.artists
+                ? `/artists/${song?.artists[0]?.adamid}`
+                : "/top-artists"
+            }
+          >
+            <img
+              src={song?.images?.background || "https://placehold.co/250x250?text=No+Art"}
+              alt="name"
+              className="rounded-lg w-full object-cover"
+            />
+          </Link>
         </div>
         <div className="flex flex-col items-center text-center my-5">
-          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
-            <p className="font-bold text-2xl text-gray-300 mt-1">{song?.subtitle}</p>
+          <Link
+            to={
+              song.artists
+                ? `/artists/${song?.artists[0]?.adamid}`
+                : "/top-artists"
+            }
+          >
+            <p className="font-bold text-2xl text-gray-300 mt-1">
+              {song?.subtitle}
+            </p>
           </Link>
         </div>
       </div>

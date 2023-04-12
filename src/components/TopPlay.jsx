@@ -24,7 +24,7 @@ const TopChartCard = ({
     <h3 className="font-bold text-base text-white mr-3">{i + 1}</h3>
     <div className="flex-1 flex flex-row justify-between items-center">
       <img
-        src={song?.images?.coverart}
+        src={song?.images?.coverart || "https://placehold.co/250x250?text=No+Art"}
         alt={song?.title}
         className="w-20 h-20 rounded-lg"
       />
@@ -32,7 +32,13 @@ const TopChartCard = ({
         <Link to={`/songs/${song?.key}`}>
           <p className="text-xl font-bold text-white">{song?.title}</p>
         </Link>
-        <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+        <Link
+          to={
+            song.artists
+              ? `/artists/${song?.artists[0]?.adamid}`
+              : "/top-artists"
+          }
+        >
           <p className="text-base text-gray-300 mt-1">{song?.subtitle}</p>
         </Link>
       </div>
@@ -49,7 +55,9 @@ const TopChartCard = ({
 
 const TopPlay = () => {
   const dispatch = useDispatch();
-  const { activeSong, isPlaying, genreListId } = useSelector((state) => state.player);
+  const { activeSong, isPlaying, genreListId } = useSelector(
+    (state) => state.player
+  );
   const { data, isFetching } = useGetChartsQuery(genreListId);
   const divRef = useRef(null);
 
@@ -119,9 +127,18 @@ const TopPlay = () => {
               style={{ width: "25%", height: "auto" }}
               className="shadow-lg rounded-full animate-slider"
             >
-              <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+              <Link
+                to={
+                  song.artists
+                    ? `/artists/${song?.artists[0]?.adamid}`
+                    : "/top-artists"
+                }
+              >
                 <img
-                  src={song?.images.background}
+                  src={
+                    song?.images?.background ||
+                    "https://placehold.co/250x250?text=No+Art"
+                  }
                   alt="name"
                   className="rounded-full w-full object-cover"
                 />

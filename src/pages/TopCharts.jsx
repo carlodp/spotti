@@ -45,13 +45,25 @@ const TopChartCard = ({
               handlePlay={handlePlayClick}
             />
           </div>
-          <img src={song?.images?.coverart} alt={song?.title} />
+          <img
+            src={
+              song?.images?.coverart ||
+              "https://placehold.co/250x250?text=No+Art"
+            }
+            alt={song?.title}
+          />
         </div>
         <div className="mt-4 flex flex-col">
           <Link to={`/songs/${song?.key}`}>
             <p className="text-xl font-bold text-white">{song?.title}</p>
           </Link>
-          <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+          <Link
+            to={
+              song.artists
+                ? `/artists/${song?.artists[0]?.adamid}`
+                : "/top-artists"
+            }
+          >
             <p className="text-base text-gray-300 mt-1">{song?.subtitle}</p>
           </Link>
         </div>
@@ -79,9 +91,7 @@ const TopCharts = () => {
   };
 
   return (
-    <div
-      className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 max-w-full flex flex-col"
-    >
+    <div className="xl:ml-6 ml-0 xl:mb-0 mb-6 flex-1 max-w-full flex flex-col">
       <div className="w-full flex flex-col">
         <div className="flex flex-row justify-between items-center">
           <h2 className="text-white font-bold text-5xl mb-5">Top Charts</h2>

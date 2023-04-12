@@ -61,7 +61,6 @@ const SongDetails = () => {
         isPlaying={isPlaying}
         handlePauseClick={handlePauseClick}
         handlePlayClick={handlePlayClick}
-        artistId={songData.artists[0].adamid}
       />
     </div>
   );
